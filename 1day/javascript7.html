@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="height">
+    <button onclick="limet()">검사</button>
+    <hr>
+    <p id="text"></p>
+    <script>
+        function limet(){
+            let height = Number(document.getElementById("height").value);
+            document.getElementById("text").innerHTML = height >= 110 ? "놀이기구 탑승" : "탑승불가";
+        }
+    </script>
+</body>
+</html>

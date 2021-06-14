@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    용돈 총액 : <input type="number" id="money" value="10000"><br>
+    <hr>
+    식비 : <input type="number" id="en"> <br>
+    교통비 : <input type="number" id="tr"> <br>
+    음료비 : <input type="number" id="dr"> <br>
+    <button onclick="result()">계산</button>
+    <hr>
+    <p id="text"></p>
+
+    <script>
+        function result(){
+            let money = Number(document.getElementById("money").value);
+            let total = Number(document.getElementById("en").value) +
+             Number(document.getElementById("tr").value) + 
+             Number(document.getElementById("dr").value) ;
+            document.getElementById("text").innerHTML = money - total >= 0 ? `용돈관리를 잘했습니다. ${money-total}원 세이브 되었습니다.` : `용돈관리를 잘 못했습니다. ${(money-total)*-1}원 지출이 초과 되었습니다.`;
+        }
+    </script>
+</body>
+</html>

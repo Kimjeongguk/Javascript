@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <script>
+        let cm = prompt("변환하고싶은 cm를 입력하세요");
+        const div = 100;
+        let m = cm / div
+        // document.write(m);
+        document.getElementById("demo").innerHTML = cm + "cm는 m단위로 환산하면" + m + "입니다.";
+    </script>
+</body>
+</html>

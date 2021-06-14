@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num1" size="2">
+    <input type="number" id="num2" size="2">
+    <hr>
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mul()">x</button>
+    <button onclick="div()">/</button>
+    <hr>
+    <input type="text" id="result">
+    <script>
+        function number(a){
+            return Number(document.getElementById(a).value);
+        }
+        function add(){
+            document.getElementById("result").value = number("num1") + number("num2");
+        }
+        function sub(){
+            document.getElementById("result").value = number("num1") - number("num2");
+        }
+        function mul(){
+            document.getElementById("result").value = number("num1") * number("num2");
+        }
+        function div(){
+            document.getElementById("result").value = number("num1") / number("num2");
+        }
+    </script>
+</body>
+</html>

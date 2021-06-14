@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    원가 <input type="text" id="origin">원 <br>
+    할인율 <input type="text" id="rate">% <br>
+    <hr>
+    <button onclick="price()">할인가격 계산</button>
+    <p id="result"></p>
+
+    <script>
+        function price() {
+            let origin = Number(document.getElementById("origin").value);
+            let rate = Number(document.getElementById("rate").value);
+            document.getElementById("result").innerHTML = `원래 상품가격은 ${origin}원 이고, 할인율은 ${rate}%입니다. 할인된가격은 ${rate/100*origin}이고 총 결제금액은 ${origin - (rate/100*origin)} 입니다.`;
+        }
+    </script>
+</body>
+</html>
