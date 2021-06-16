@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let d = new Array();
+        // d[0] = 30;
+        // d[1] = "따르르르르르릉";
+        // d[2] = true;
+        // console.log(d);
+        let d = [30, "따르릉", true];
+        console.log(d);
+        document.write("<h2>ㅇㅇ</h2>");
+        for(let i=0; i<d.length; i++){
+            document.write(d[i] + "<br>");
+        }
+
+
+        let ary_1 = ["사당", "교대", "방배", "강남"];
+        let ary_2 = ["신사", "압구정", "옥수"];
+
+        let result = ary_1.join("-");
+        document.write(result + "<br>");
+        result = ary_1.concat(ary_2);
+        document.write(result + "<br>");
+        result = ary_1.slice(1,3);
+        document.write(result + "<br>");
+
+        ary_1.sort();
+        document.write(ary_1 + "<br>");
+
+        ary_2.reverse();
+        document.write(ary_2 + "<br>");
+
+        ary_1.splice(2,1,"test");
+        document.write(ary_1 + "<br>");
+
+        ary_1.pop();
+        document.write(ary_1 + "<br>");
+
+        document.write(ary_2 + "<br>");
+
+        
+    </script>    
+</body>
+</html>

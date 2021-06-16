@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tv = new Object();
+        tv.color = "black";
+        tv.price = 30000;
+        tv.info = function(){
+            document.write(`tv의 칼라는 ${this.color} 입니다.`);
+            document.write(`tv의 가격은 ${this.price} 입니다.`);
+        }
+
+        let car = {
+            color: "red",
+            price: 100000000,
+            info: function(){
+                document.write(`car의 칼라는 ${this.color} 입니다.`);
+                document.write(`car의 가격은 ${this.price} 입니다.`);
+            }
+        }
+        tv.info();
+        document.write("<br>");
+        car.info();
+    </script>
+</body>
+</html>

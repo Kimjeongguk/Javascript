@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="sum"></p>
+    <script>
+        let num = prompt("팩토리얼 계산할 숫자를 입력하세요");
+        let sum = 1;
+        for(num; num>1; num--){
+            sum *= num;
+        }
+        document.getElementById("sum").innerHTML = sum;
+    </script>
+</body>
+</html>

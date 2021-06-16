@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let today = new Date();
+        let nowYear = today.getFullYear();
+        let theDate = new Date(nowYear, 11, 25);
+
+        var diffDate = theDate.getTime() - today.getTime(); 
+        console.log(diffDate);
+
+        let result = Math.ceil(diffDate / (1000*60*60*24));
+
+        console.log(result);
+    </script>
+</body>
+</html>

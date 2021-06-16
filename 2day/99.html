@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table {
+
+            border-collapse: collapse;
+            float: left;
+            margin: 20px;
+        }
+        table td, th {
+            padding: 10px 20px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <p id="googoodan"></p>
+    <script>
+        let table = "<table>";
+        
+        for(let i=0; i<10; i++){
+            table += "<tr>"
+            for(let j=2; j<10; j++){
+                if(i == 0){
+                    table += `<th>${j}단</th>`;
+                }
+                else{
+                    let ary = String(i*j);
+                    if(ary.match("7")){
+                        table += `<td style='background: skyblue'>${j}x${i}=${i*j}</td>`;
+                    }
+                    else if(ary.match("9")){
+                        table += `<td style='background: red'>${j}x${i}=${i*j}</td>`;
+                    }
+                    else if(ary.indexOf("4") >= 0){
+                        table += `<td style='background: pink'>${j}x${i}=${i*j}</td>`;
+                    }
+                    else{
+                        table += `<td>${j}x${i}=${i*j}</td>`;
+                    }
+                }
+            }
+            table += "<br></tr>"
+        }
+        table += "</table>"
+        document.getElementById("googoodan").innerHTML = table;
+    </script>
+</body>
+</html>
