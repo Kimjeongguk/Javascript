@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>음식리스트</h1>
+    <ul>
+        <li class="item">짜장면</li>
+        <li class="item">탕수육</li>
+        <li class="item">피자</li>
+        <li class="item">햄버거</li>
+        <li class="item">치킨</li>
+    </ul>
+    <button onclick="h1Title()">타이틀</button>
+    <button onclick="btn()">변경</button>
+    <div class="imgbox">
+        <img src="images/easys-1.jpg" alt="여자어린이" id="cover">
+    </div>
+    <script>
+        function h1Title(){
+            let btn = document.getElementsByTagName("button");
+            let txt = btn[0].innerHTML;
+            document.getElementsByTagName("h1")[0].innerHTML = txt;
+        }
+        function btn(){
+            let list = document.getElementsByClassName("item");
+            for(let i = 0; i<list.length; i++){
+                list[i].style.backgroundColor = "#ddd";
+                list[i].style.color = "blue";
+                list[i].style.border = "2px solid red";
+            }
+
+        }
+
+        let img = document.getElementById("cover");
+     
+        // 요소.addEventListener("이벤트명", "실행함수");
+        cover.addEventListener("mouseover", function(){
+            // alert("test");
+            cover.src = "images/easys-2.jpg";
+            cover.setAttribute("alt", "남자어린이");
+        }); 
+
+        cover.addEventListener("mouseout", function(){
+            cover.src = "images/easys-1.jpg";
+            cover.setAttribute("alt", "여자어린이");
+        });
+    </script>
+</body>
+</html>

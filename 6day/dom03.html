@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        let box = document.getElementsByClassName("box");
+        let box2 = document.querySelector(".box");
+        let box3 = document.querySelectorAll(".box");
+        box3[0].addEventListener("mouseover", function(){
+            this.style.borderRadius = "50%";
+            this.style.backgroundColor = "red";
+        });
+        box3[0].addEventListener("mouseout", function(){
+            this.style.borderRadius = "0";
+            this.style.backgroundColor = "yellow";
+        });
+
+        
+    </script>
+</body>
+</html>

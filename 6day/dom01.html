@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">DOM 선자자</h1>
+    <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus corporis id reiciendis vitae expedita nobis exercitationem possimus laborum. Nesciunt qui aspernatur molestiae nisi aperiam reprehenderit libero temporibus velit eligendi nulla!
+    </p>
+    <ul>
+        <li class="item">키위</li>
+        <li class="item">블루베리</li>
+        <li class="item">라즈베리</li>
+        <li class="item">수박</li>
+        <li class="item">멜론</li>
+        <li class="item">딸기</li>
+        <li class="item">망고</li>
+    </ul>
+    <p>문단입니다.</p>
+    <button onclick="text1()">클릭</button>
+    <button onclick="text2()">변경</button>
+    <button onclick="text3()">갯수출력</button>
+    <button onclick="text4()">삭제</button>
+    <button onclick="text5()">출력</button>
+    <p class="length"></p>
+
+    <script>
+        let title = document.getElementById("title");
+        title.style.backgroundColor = "red";
+        title.style.color = "#fff";
+        title.innerHTML = "아이디선택자";
+
+        let item = document.getElementsByClassName("item");
+        for (let i = 0; i<item.length; i++){
+            item[i].style.backgroundColor = "pink";
+        }
+
+        let ptage = document.getElementsByTagName("p");
+        ptage[1].style.backgroundColor = "orange";
+        function text1(){
+            ptage[0].style.backgroundColor = "yellow";
+        }
+        function text2(){
+            item[0].innerHTML = "파인애플";
+        }
+        function text3(){
+            ptage[2].innerHTML = item.length;
+        }
+        function text4(){
+            ptage[0].style.display = "none";
+        }
+        function text5(){
+            ptage[0].style.display = "inline";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #imgbox {
+            width: 800px;
+            margin: 100px auto;
+        }
+        #imgbox::after {
+            content: "";
+            display: none;
+            clear: both;
+        }
+        .imglist {
+            list-style: none;
+        }
+        .imglist li {
+            float: left;
+            width: 32%;
+            margin: 0.5%;
+            box-sizing: border-box;
+            font-size: 0;
+        }
+        .imglist li:last-child {
+            margin-right: 0;
+        }
+        .imglist li img {
+            width: 100%;
+            filter: grayscale(1);
+            transition: .5s;
+        }
+        .imglist li:hover {
+            border: 2px solid cornflowerblue;
+        }
+        .imglist li:hover img {
+            filter: grayscale(0);
+            width: 100%;
+        }
+        #lightBox {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+            display: none;
+        }
+        #lightBox img {
+            border: 5px solid #fff;
+            height: 600px;
+            display: block;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="imgbox">
+        <ul class="imglist">
+            <li><img src="./images/tree-1-thumb.jpg" data-src="./images/tree-1.jpg" class="simg" alt="0"></li>
+            <li><img src="./images/tree-2-thumb.jpg" data-src="./images/tree-2.jpg" class="simg" alt="1"></li>
+            <li><img src="./images/tree-3-thumb.jpg" data-src="./images/tree-3.jpg" class="simg" alt="2"></li>
+            <li><img src="./images/tree-4-thumb.jpg" data-src="./images/tree-4.jpg" class="simg" alt="3"></li>
+            <li><img src="./images/tree-5-thumb.jpg" data-src="./images/tree-5.jpg" class="simg" alt="4"></li>
+            <li><img src="./images/tree-6-thumb.jpg" data-src="./images/tree-6.jpg" class="simg" alt="5"></li>
+        </ul>
+        <div id="lightBox">
+            <img src="./images/tree-1.jpg" alt="" id="lightBoxImg">
+        </div>
+    </div>
+    <script>
+        let box = document.getElementById("lightBox");
+        let simg = document.getElementsByClassName("simg");
+        let bimg = document.getElementById("lightBoxImg");
+        for (i in simg){
+            simg[i].onclick = function(){
+                bimg.setAttribute("src", this.getAttribute("src"));
+                box.style.display = "block";
+            }
+        }
+        bimg.onclick = function(){
+            box.style.display = "none";
+        }
+    </script>
+</body>
+</html>
