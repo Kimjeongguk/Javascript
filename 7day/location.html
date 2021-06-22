@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 150px;
+            height: 100px;
+            background-color: orange;
+            margin: 100px 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">box</div> 
+    <script>
+        let box = document.getElementById("box");
+        console.log(box.offsetWidth)
+        console.log(box.offsetHeight)
+        console.log(box.offsetTop)
+        console.log(box.offsetLeft)
+        console.log(window.outerWidth)
+        console.log(window.outerHeight)
+        console.log(window.innerWidth)
+        console.log(window.innerHeight)
+    </script>   
+</body>
+</html>
