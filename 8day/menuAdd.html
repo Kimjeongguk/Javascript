@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="점심메뉴 입력" id="menutext">
+        <button onclick="add()">확인</button>
+    </form>
+    <ul id="menubox"></ul>
+    <script>
+        let formbox = document.querySelector("form");
+        formbox.onsubmit = function(e){
+            e.preventDefault();
+        }
+        let menutext = document.getElementById("menutext");
+        let addbtn = document.querySelector("button");
+        let menubox = document.getElementById("menubox");
+        let menulist = [];
+
+        menutext.onkeypress = function(){
+            if(event.keyCode == 13){
+                add();
+            }
+        }
+        function add(){
+            if (menutext.value != ""){
+                menulist.push(menutext.value);
+                menutext.value = "";
+                menutext.focus();
+            }
+
+            let list = "";
+            for(let i=0; i<menulist.length; i++){
+                list += `<li> ${menulist[i]} <span id="${i}">--[메뉴삭제]--</span></li>`;
+            }
+            menubox.innerHTML = list;
+
+            let delbtn = document.querySelectorAll("#menubox>li>span");
+            for(let i=0; i<delbtn.length; i++){
+                delbtn[i].addEventListener("click", remove);
+            }
+        }
+
+        function remove(){
+            let indexNum = this.getAttribute("id");
+            menulist.splice(indexNum, 1);
+
+            let list = "";
+            for(let i=0; i<menulist.length; i++){
+                list += `<li> ${menulist[i]} <span id="${i}">--[메뉴삭제]--</span></li>`;
+            }
+            menubox.innerHTML = list;
+
+            let delbtn = document.querySelectorAll("#menubox>li>span");
+            for(let i=0; i<delbtn.length; i++){
+                delbtn[i].addEventListener("click", remove);
+            }
+        }
+    </script>
+</body>
+</html>
