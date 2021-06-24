@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DOM 트리에 노드 추가하기</title>
+	<style>
+		.accent {
+			border:1px solid #222;
+			padding:15px 20px;
+			background-color:#eee;
+		}
+		.bold {
+			font-weight:bold;
+		}
+        .link {
+            
+        }
+	</style>
+</head>
+<body>
+    <script>
+        // let newTagP = document.createElement("p");
+        // let newText = document.createTextNode("주문완료");
+        // let attr = document.createAttribute("class");
+        // attr.value = "accent";
+        // newTagP.appendChild(newText);
+        // newTagP.setAttributeNode(attr);
+        // document.body.appendChild(newTagP);
+
+
+        let tag = document.createElement("a");
+        let txt = document.createTextNode("네이버바로가기");
+        // let link = document.createAttribute("href");
+        // link.value = "https://www.naver.com";
+        // tag.setAttributeNode(link);
+        tag.setAttribute("href", "https://www.naver.com");
+        tag.appendChild(txt);
+        document.body.appendChild(tag);
+
+
+    </script>
+</body>
+</html>

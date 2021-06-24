@@ -34,31 +34,31 @@
             let box5 = document.getElementById("box5");
 
            
-            if (box1.offsetTop > scrollTop){
+            if (box1.offsetTop - 90 > scrollTop){
                 box1.style.transform = "translateX(300px)";
             }else {
                 box1.style.transform = "translateX(0px)";
             }
 
-            if (box2.offsetTop > scrollTop){
+            if (box2.offsetTop - 90 > scrollTop){
                 box2.style.transform = "translateX(-300px)";
             }else {
                 box2.style.transform = "translateX(0px)";
             }
 
-            if (box3.offsetTop > scrollTop){
-                box3.style.transform = "rotateY(" + scrollTop*0.01 + "360deg)";
+            if (box3.offsetTop - 90 > scrollTop){
+                box3.style.transform = "rotateY(" + scrollTop * 0.2 + "deg)";
             }else {
                 box3.style.transform = "rotateY(0)";
             }
 
-            if (box4.offsetTop > scrollTop){
+            if (box4.offsetTop - 90 > scrollTop){
                 box4.style.transform = "translateX(300px)";
             }else {
                 box4.style.transform = "translateX(0px)";
             }
             
-            if (box5.offsetTop > scrollTop){
+            if (box5.offsetTop - 90 > scrollTop){
                 box5.style.transform = "translateX(300px)";
             }else {
                 box5.style.transform = "translateX(0px)";

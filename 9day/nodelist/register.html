@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DOM - Create & Add Node</title>
+	<link rel="stylesheet" href="css/nameList.css">
+</head>
+<body>
+	<div id="container">
+		<h1>참가 신청</h1>
+		<form action="">
+			<input type="text" id="userName" placeholder="이름" required>
+			<button onclick="newRegister(); return false;">신청</button>
+		</form>
+		<hr>
+		<div id="nameList"></div>
+	</div>
+	<script>
+		function newRegister(){
+			let newTagP = document.createElement("p");
+			let newName = document.getElementById("userName").value;
+			let newText = document.createTextNode(newName);
+			newTagP.appendChild(newText);
+			console.log(newTagP);
+			
+			let newTagSpan = document.createElement("span");
+			let newdel = document.createTextNode("X");
+			newTagSpan.appendChild(newdel);
+			newTagSpan.setAttribute("class", "del");
+			
+
+			newTagP.appendChild(newTagSpan);
+
+			let nlist = document.getElementById("nameList");
+		//	nlist.appendChild(newTagP);
+			nlist.insertBefore(newTagP, nlist.children[0]);
+			
+			document.getElementById("userName").value = "";
+
+			let test = nlist.childNodes;
+			// nameList.insertBefore(추가하는코드, 기준 노드);
+
+			//delete
+			//노드에서 삭제 할려면 부모 노드에서 자식노드만 삭제가능함 remoceChild해야함
+			let delBtn = document.querySelectorAll(".del");
+			for(let i=0; i<delBtn.length; i++){
+				delBtn[i].addEventListener("click", function(){
+					if (this.parentNode.parentNode){
+						this.parentNode.parentNode.removeChild(this.parentNode);						
+					}
+				});
+			}
+		}
+	</script>
+</body>
+</html>
+
