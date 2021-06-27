@@ -5,7 +5,7 @@
     <title>Green복지재단</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- <script src="script/jquery-1.12.4.min.js"></script> -->
-    <!-- <script src="script/script.js"></script> -->
+    <script defer src="script/script.js"></script>
 </head>
 <body>
   <div id="wrap">
@@ -143,7 +143,16 @@
       
     },3000);
 
+    let box = document.querySelector(".box");
+    let popup = document.getElementById("popup");
+    let close = document.querySelector(".close");
 
+    box.onclick = function(){
+      popup.style.display = "block";
+    }
+    close.onclick = function(){
+      popup.style.display = "none";
+    }
     let list = document.querySelectorAll(".list");
     for(let i=0; i<tap.length; i++){
       tap[i].addEventListener("click", function(){

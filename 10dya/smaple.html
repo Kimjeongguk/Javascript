@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #outer {
+            margin-top: 100px;
+            padding: 50px;
+            background-color: red;
+        }
+        #inner {
+            background-color: yellow;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div><a href="https://www.naver.com" id="link">네이버 바로가기</a></div>
+    <div id="outer">
+        <div id="inner">클릭~</div>
+    </div>
+    <script>
+        let linkbox = document.getElementById("link");
+        linkbox.onclik = function(e){
+            alert("sdfsd");
+            e.preventDefault();
+        }
+        let outer = document.getElementById("outer");
+        let inner = document.getElementById("inner");
+        outer.onclick = function(){
+            alert("부모");
+        }
+        inner.onclick = function(e){
+            alert("자식");
+            e.stopPropagation();//버블링현상없에줌
+        }
+    </script>
+</body>
+</html>
